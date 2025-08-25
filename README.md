@@ -11,7 +11,7 @@ First step was to fire up the drone in its default environment, which means its 
 In a second time, we want to get the image data; my first thought was to sniff the packets sent between the iPad and the drone, so I wanted to connect to the drone wifi:  
 ![Connecting to Drone](images/Droneconnect.png)
 
-But here's the first challenge: only one device can connect to the drone, the rest will get an error while trying to connect. So we can establish this "map" (lol) of the network — these IPs are static and can't change:  
+But here's the first challenge: only one device can connect to the drone, the rest will get an error while trying to connect. So we can establish this "map" (lol) of the network  these IPs are static and can't change:  
 ![Network Map](images/Net_map.png)
 
 After trying many things to enter the network to sniff the packets, I came across this [Apple Developer documentation page](https://developer.apple.com/documentation/network/recording-a-packet-trace), which basically teaches us that the binary `rvictl` on MacOS lets you "mirror" an Apple mobile device's network communications on an rvi0 interface:  
